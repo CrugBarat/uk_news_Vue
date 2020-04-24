@@ -1,19 +1,20 @@
 <template lang="html">
   <div>
     <section>
-      <div v-for="article in this.articles">
-        {{article.title}}
-        <a :href="article.url" target="_blank"><img :src="article.urlToImage"></a>
-        <p>{{article.description}}</p>
-      </div>
+      <news-articles v-for="article in this.articles" :article="article"></news-articles>
     </section>
   </div>
 </template>
 
 <script>
+import NewsArticles from './NewsArticles.vue';
+
 export default {
   name: 'news-list',
   props: ['articles'],
+  components: {
+    'news-articles': NewsArticles
+  }
 }
 </script>
 
