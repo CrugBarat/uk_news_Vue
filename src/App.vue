@@ -68,7 +68,7 @@ export default {
   methods: {
     buildUrl (url) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
-      const ApiKey = "7471aed1641e411b99a979fec157b562";
+      const ApiKey = "3159bd64ef004f7584490af8761d30b0";
       return NewsAPIBaseUrl + url + "&apiKey=" + ApiKey
     },
     getArticles(section) {
