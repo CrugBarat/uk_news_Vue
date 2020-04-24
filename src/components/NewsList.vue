@@ -1,7 +1,13 @@
 <template lang="html">
   <div>
     <section>
-      <news-articles v-for="article in this.articles" :article="article"></news-articles>
+      <div class="overall-container">
+        <div class="grid-container">
+          <div class="grid">
+            <news-articles v-for="article in this.articles" :article="article"><p>{{article.description}}</p></news-articles>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -19,4 +25,24 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.overall-container {
+  width: 100vw;
+  display: block;
+  text-align: center;
+}
+
+.grid-container {
+  width: 100vw;
+  display: inline-block;
+}
+
+.grid {
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: pink;
+}
+
 </style>

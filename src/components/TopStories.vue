@@ -1,24 +1,30 @@
 <template lang="html">
   <div>
     <section>
-      <news-articles v-for="article in topArticles(randomIndex())" :article="article"></news-articles>
+      <div class="overall-container">
+        <div class="grid-container">
+          <div class="grid">
+            <top-stories-articles v-for="article in topArticles(randomIndex())" :article="article"></top-stories-articles>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
-import NewsArticles from './NewsArticles.vue';
+import TopStoriesArticles from './TopStoriesArticles.vue';
 
 export default {
   name: 'top-stories',
   props: ['articles'],
   components: {
-    'news-articles': NewsArticles
+    'top-stories-articles': TopStoriesArticles
   },
   methods: {
     topArticles(index) {
       let articles = this.articles;
-      let i, j, chunkedArray = [], chunk = 4;
+      let i, j, chunkedArray = [], chunk = 3;
       for (i=0, j=0; i < articles.length; i += chunk, j++) {
         chunkedArray[j] = articles.slice(i,i+chunk);
       }
@@ -32,4 +38,24 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.overall-container {
+  width: 100vw;
+  display: block;
+  text-align: center;
+}
+
+.grid-container {
+  width: 100vw;
+  display: inline-block;
+}
+
+.grid {
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
 </style>

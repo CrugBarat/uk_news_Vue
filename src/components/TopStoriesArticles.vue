@@ -2,15 +2,14 @@
   <div class="article">
     <a :href="article.url" target="_blank">
       <img class="article-image":src="article.urlToImage">
-      <p>{{article.title}}</p>
-      <p>{{article.description}}</p>
+      <p class="title">{{article.title}}</p>
     </a>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'news-articles',
+  name: 'top-stories-articles',
   props: ['article']
 }
 </script>
@@ -21,7 +20,7 @@ export default {
   border-style: solid;
   color: black;
   flex: 1, 0, auto;
-  width: 19%;
+  width: 32%;
 }
 
 a {
@@ -30,7 +29,17 @@ a {
 }
 
 .article-image {
-  width: 270px;
-  height: 270px;
+  width: 450px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: 700;
 }
 </style>
