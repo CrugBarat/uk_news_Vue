@@ -1,8 +1,10 @@
 <template lang="html">
-  <div>
-    <div v-for="section in countrySections">
-      <a v-on:click="handleClick">{{section}}</a>
-    </div>
+  <div class="sections-container">
+      <div  v-for="section in countrySections">
+        <div class="sections">
+          <a v-on:click="handleClick">{{section}}</a>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -16,10 +18,10 @@ export default {
     countrySections() {
       return this.sections.filter(country => {
         return country === 'SCOTLAND' || country === 'ENGLAND'
-         || country === 'WALES' || country === 'NORTHERN-IRELAND'
+        || country === 'WALES' || country === 'NORTHERN-IRELAND'
       });
-      }
-    },
+    }
+  },
   methods: {
     handleClick() {
       eventBus.$emit('selected-section', this.section)
@@ -29,4 +31,28 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.sections-container {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  padding-left: 80px;
+}
+
+.sections {
+  border-style: solid;
+  border-color: transparent;
+  float: left;
+  clear: none;
+  color: #edf2f4;
+  padding: 0;
+  margin: 0;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.sections:hover {
+  cursor: pointer;
+}
 </style>

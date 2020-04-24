@@ -142,7 +142,7 @@ export default {
 
 .heading-container {
   width: 100vw;
-  height: 130px;
+  height: 100px;
   background-color: #034078;
 }
 
