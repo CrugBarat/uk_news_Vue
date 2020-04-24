@@ -1,16 +1,21 @@
 <template lang="html">
   <div class="article">
     <a :href="article.url" target="_blank">
-      <img class="article-image":src="article.urlToImage">
+      <article-images :imageUrl="article.urlToImage"></article-images>
       <p class="title">{{article.title}}</p>
     </a>
   </div>
 </template>
 
 <script>
+import ArticleImages from './ArticleImages.vue';
+
 export default {
   name: 'top-stories-articles',
-  props: ['article']
+  props: ['article'],
+  components: {
+    'article-images': ArticleImages
+  }
 }
 </script>
 
@@ -27,13 +32,6 @@ export default {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.article-image {
-  width: 410px;
-  height: 300px;
-  padding: 0;
-  margin: 0;
 }
 
 .title {

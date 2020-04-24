@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="article">
     <a :href="article.url" target="_blank">
-      <img class="article-image":src="article.urlToImage">
+      <article-images class="article-image" :imageUrl="article.urlToImage"></article-images>
       <p class="title">{{article.title}}</p>
       <p>{{article.description}}</p>
     </a>
@@ -9,9 +9,14 @@
 </template>
 
 <script>
+import ArticleImages from './ArticleImages.vue';
+
 export default {
   name: 'news-articles',
-  props: ['article']
+  props: ['article'],
+  components: {
+    'article-images': ArticleImages
+  }
 }
 </script>
 
