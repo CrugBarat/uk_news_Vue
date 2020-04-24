@@ -24,6 +24,7 @@
     </div>
     <section class="heading-container">
       <h1 class="heading">UK NEWS</h1>
+      <menu-items :sections="sections"></menu-items>
     </section>
     <div class="page-container">
       <div class="body-container">
@@ -45,7 +46,10 @@
 
 import NewsList from './components/NewsList.vue';
 import TopStories from './components/TopStories.vue';
+import MenuItems from './components/MenuItems.vue';
 import logoBlack from './assets/logo-black.png';
+import {eventBus} from './main.js'
+
 const axios = require('axios').default;
 const QUERIES = "SCOTLAND, Aberdeen, Dumfries, Dundee, Edinburgh, Falkirk, Glasgow, Inverness, Perth, Stirling, ENGLAND, Bristol, Cambridge, Carlisle, Chester, Leeds, Leicester, Liverpool, London, Manchester, Newcastle, Norwich, Nottingham, Oxford, Portsmouth, Sheffield, Southampton, York, NORTHERN-IRELAND, Belfast, Derry, WALES, Bangor, Cardiff, Newport, Swansea";
 
@@ -76,10 +80,16 @@ export default {
   },
   mounted() {
     this.getArticles('scotland');
+
+    eventBus.$on('selected-section', (section) => {
+      this.getArticles(section);
+    });
+
   },
   components: {
     'news-list': NewsList,
     'top-stories': TopStories,
+    'menu-items': MenuItems,
   }
 }
 </script>
@@ -132,7 +142,7 @@ export default {
 
 .heading-container {
   width: 100vw;
-  height: 100px;
+  height: 130px;
   background-color: #034078;
 }
 
