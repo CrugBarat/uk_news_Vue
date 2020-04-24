@@ -17,12 +17,11 @@ export default {
 <style lang="css" scoped>
 
 .article {
-  border-style: solid;
   color: black;
   flex: 1, 0, auto;
   width: 32%;
   text-align: left;
-  margin: 6px;
+  margin: 4px;
 }
 
 a {
@@ -31,7 +30,7 @@ a {
 }
 
 .article-image {
-  width: 450px;
+  width: 410px;
   height: 300px;
   padding: 0;
   margin: 0;

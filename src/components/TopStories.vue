@@ -40,13 +40,11 @@ export default {
 <style lang="css" scoped>
 
 .overall-container {
-  width: 100vw;
   display: block;
   text-align: center;
 }
 
 .grid-container {
-  width: 100vw;
   display: inline-block;
 }
 
