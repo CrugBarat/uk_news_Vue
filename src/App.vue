@@ -1,6 +1,8 @@
 <template lang="html">
   <div>
-    <h1>UK NEWS</h1>
+    <section class="heading-container">
+      <h1 class="heading"> <img class="logo" :src="this.logo"> UK NEWS</h1>
+    </section>
     <section>
       <h5>Filter by Category</h5>
       <form>
@@ -18,11 +20,13 @@
 
 
 <script>
+import NewsList from './components/NewsList.vue'
+import logo from './assets/logo.png'
 const axios = require('axios').default;
-
 const QUERIES = "SCOTLAND, Aberdeen, Dumfries, Dundee, Edinburgh, Falkirk, Glasgow, Inverness, Perth, Stirling, ENGLAND, Bristol, Cambridge, Carlisle, Chester, Leeds, Leicester, Liverpool, London, Manchester, Newcastle, Norwich, Nottingham, Oxford, Portsmouth, Sheffield, Southampton, York, NORTHERN-IRELAND, Belfast, Derry, WALES, Bangor, Cardiff, Newport, Swansea";
 
-import NewsList from './components/NewsList.vue'
+
+
 export default {
   name: 'app',
   data() {
@@ -30,6 +34,7 @@ export default {
       results: [],
       sections: QUERIES.split(', '),
       section: 'scotland',
+      logo: logo
     }
   },
   methods: {
@@ -55,4 +60,27 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.heading-container {
+  width: 100vw;
+  border-style: solid;
+  background-color: #034078;
+}
+
+.logo {
+  height: 25px;
+  padding-left: 5px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: #edf2f4;
+}
+
+.heading {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 30px;
+}
 </style>
