@@ -1,19 +1,33 @@
-# news_test
+# UK NEWS
 
-## Project setup
+A basic UK NEWS search app, which uses an API as a data source:
+
+**Programming Language**: JavaScript
+
+**Web App Framework**: Vue
+
+**Markup/Styling**: HTML5/CSS3
+
+The UK NEWS app can dynamically search data requested from multiple APIs and return details stored for a corresponding result. It can filter through countries and cities in the UK and return a list of up-to-date news articles for the corresponding area. Each area uses a different API as a data source.
+
+---
+
+# Setup
+
+- Download/Clone files
+
+- In Terminal
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+- Compile for development
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Click the link below to open project in browser
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[LocalHost](http://localhost:8080/)
