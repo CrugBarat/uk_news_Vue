@@ -4,6 +4,9 @@
       <h1 class="heading"> <img class="logo" :src="this.logo"> UK NEWS</h1>
     </section>
     <section>
+      <top-stories :articles="articles"></top-stories>
+    </section>
+    <section>
       <h5>Filter by Category</h5>
       <form>
         <select v-model="section">
@@ -13,15 +16,16 @@
       </form>
     </section>
     <div>
-      <news-list :results="results"></news-list>
+      <news-list :articles="articles"></news-list>
     </div>
   </div>
 </template>
 
 
 <script>
-import NewsList from './components/NewsList.vue'
-import logo from './assets/logo.png'
+import NewsList from './components/NewsList.vue';
+import TopStories from './components/TopStories.vue';
+import logo from './assets/logo.png';
 const axios = require('axios').default;
 const QUERIES = "SCOTLAND, Aberdeen, Dumfries, Dundee, Edinburgh, Falkirk, Glasgow, Inverness, Perth, Stirling, ENGLAND, Bristol, Cambridge, Carlisle, Chester, Leeds, Leicester, Liverpool, London, Manchester, Newcastle, Norwich, Nottingham, Oxford, Portsmouth, Sheffield, Southampton, York, NORTHERN-IRELAND, Belfast, Derry, WALES, Bangor, Cardiff, Newport, Swansea";
 
@@ -31,7 +35,7 @@ export default {
   name: 'app',
   data() {
     return {
-      results: [],
+      articles: [],
       sections: QUERIES.split(', '),
       section: 'scotland',
       logo: logo
@@ -46,7 +50,7 @@ export default {
     getArticles(section) {
       let url = this.buildUrl(section);
       axios.get(url).then((response) => {
-        this.results = response.data.articles;
+        this.articles = response.data.articles;
       });
     }
   },
@@ -54,7 +58,8 @@ export default {
     this.getArticles('scotland');
   },
   components: {
-    'news-list': NewsList
+    'news-list': NewsList,
+    'top-stories': TopStories,
   }
 }
 </script>
