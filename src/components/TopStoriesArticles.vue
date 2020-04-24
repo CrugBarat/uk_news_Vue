@@ -21,6 +21,8 @@ export default {
   color: black;
   flex: 1, 0, auto;
   width: 32%;
+  text-align: left;
+  margin: 6px;
 }
 
 a {
