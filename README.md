@@ -39,3 +39,5 @@ npm run serve
 # Acknowledgements
 
 Thanks to Olayinka Omole.
+
+API used: [News API](https://newsapi.org/)
