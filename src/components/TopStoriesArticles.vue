@@ -24,13 +24,12 @@ export default {
 <style lang="css" scoped>
 
 .article {
-  border-style: solid;
   color: black;
   flex: 1, 0, auto;
   width: 391px;
   text-align: left;
-  margin-right: 13px;
-  margin-left: 13px;
+  margin-right: 20px;
+  margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: auto;
@@ -44,14 +43,13 @@ a {
 .image-container {
   width: 390x;
   overflow: auto;
-  border-style: solid;
 }
 
 .title {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'Coda Caption', sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 900;
 }
 </style>

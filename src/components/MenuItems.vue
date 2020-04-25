@@ -47,11 +47,10 @@ export default {
   margin: 0;
   overflow: auto;
   padding-left: 5.5vw;
-  display: flex
+  display: flex;
 }
 
 .sections {
-  border-color: transparent;
   float: left;
   color: #edf2f4;
   padding: 0;

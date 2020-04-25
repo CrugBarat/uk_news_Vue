@@ -27,13 +27,11 @@ export default {
 <style lang="css" scoped>
 
 .overall-container {
-  border-style: solid;
   display: block;
   text-align: center;
 }
 
 .grid-container {
-  border-style: solid;
   width: 85%;
   padding: 0;
   margin: 0;

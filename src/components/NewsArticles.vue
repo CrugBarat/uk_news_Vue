@@ -5,7 +5,7 @@
       <article-images class="image" :imageUrl="article.urlToImage"></article-images>
       </div>
       <p class="title">{{article.title}}</p>
-      <p>{{article.description}}</p>
+      <p class="description">{{article.description}}</p>
     </a>
   </div>
 </template>
@@ -25,13 +25,12 @@ export default {
 <style lang="css" scoped>
 
 .article {
-  border-style: solid;
   color: black;
   flex: 1, 0, auto;
   width: 240px;
   text-align: left;
-  margin-right: 13px;
-  margin-left: 13px;
+  margin-right: 17px;
+  margin-left: 17px;
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: auto;
@@ -45,7 +44,6 @@ a {
 .image-container {
   width: 250px;
   overflow: auto;
-  border-style: solid;
 }
 
 .image {
@@ -56,8 +54,12 @@ a {
 .title {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'Coda Caption', sans-serif;
   font-size: 15px;
   font-weight: 900;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
