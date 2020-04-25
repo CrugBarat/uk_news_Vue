@@ -11,13 +11,11 @@
               <h1 class="menu-title">UKN</h1>
             </div>
           </div>
-          <div class="form-container">
-            <div class="form">
+          <div class="search-container">
+            <div class="search">
               <form>
-                <select v-model="section">
-                  <option v-for="section in sections" :value="section">{{section}}</option>
-                </select>
-                <a v-on:click="getArticles(section)">Retrieve</a>
+                <input class="search-box" type="text" v-model="searchNews">
+                <input class="search-logo" type="image" :src="searchIcon" v-on:click.prevent="handleSearch"></input>
               </form>
             </div>
           </div>
@@ -54,8 +52,15 @@
             <news-list :articles="articles"></news-list>
           </div>
         </section>
+        <section>
+          <top-stories :articles="articles"></top-stories>
+          <hr>
+        </section>
       </div>
     </div>
+    <section>
+      <div class="footer"></div>
+    </section>
   </div>
 </template>
 
@@ -68,6 +73,7 @@ import CountrySections from './components/CountrySections.vue';
 import CitySections from './components/CitySections.vue';
 import HeroArticle from './components/HeroArticle.vue';
 import logoBlack from './assets/logo-black.png';
+import searchIcon from './assets/search.png';
 import {eventBus} from './main.js'
 
 const axios = require('axios').default;
@@ -82,7 +88,9 @@ export default {
       articles: [],
       sections: QUERIES.split(', '),
       section: 'scotland',
-      logoBlack: logoBlack
+      logoBlack: logoBlack,
+      searchIcon: searchIcon,
+      searchNews: "",
     }
   },
   methods: {
@@ -96,6 +104,9 @@ export default {
       axios.get(url).then((response) => {
         this.articles = response.data.articles;
       });
+    },
+    handleSearch(){
+      this.getArticles(this.searchNews)
     }
   },
   mounted() {
@@ -156,7 +167,7 @@ export default {
   text-align: left;
 }
 
-.form-container {
+.search-container {
   width: 45%;
   float: left;
   padding: 0;
@@ -164,10 +175,28 @@ export default {
   overflow: auto;
 }
 
-.form {
+.search {
   float: right;
   padding: 0;
   margin: 5px;
+}
+
+.search-logo {
+  padding-left: 5px;
+}
+
+.search-box {
+  width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+input, .search-image:focus {
+  outline: none;
+}
+
+input {
+  height: 15px;
 }
 
 .heading-container {
@@ -191,10 +220,17 @@ h1 {
   text-align: center;
 }
 
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #034078;
+}
+
 </style>
 
 <style>
-  body {
-    overflow-x: hidden;
-  }
+body {
+  overflow-x: hidden;
+  user-select: none;
+}
 </style>
