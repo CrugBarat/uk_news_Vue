@@ -4,7 +4,7 @@
       <div class="overall-container">
         <div class="grid-container">
           <div class="grid">
-            <news-articles v-for="article in this.articles" :article="article"><p>{{article.description}}</p></news-articles>
+            <news-articles v-for="article in randomArticles(randomIndex())" :article="article"><p>{{article.description}}</p></news-articles>
           </div>
         </div>
       </div>
@@ -20,6 +20,19 @@ export default {
   props: ['articles'],
   components: {
     'news-articles': NewsArticles
+  },
+  methods: {
+    randomArticles(index) {
+      let articles = this.articles;
+      let i, j, chunkedArray = [], chunk = 12;
+      for (i=0, j=0; i < articles.length; i += chunk, j++) {
+        chunkedArray[j] = articles.slice(i,i+chunk);
+      }
+      return chunkedArray[index];
+    },
+    randomIndex() {
+      return Math.floor(Math.random() * 2)
+    }
   }
 }
 </script>
