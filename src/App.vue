@@ -26,10 +26,11 @@
     </div>
     <section class="heading-container">
       <h1 class="heading">UK NEWS</h1>
-      <menu-items :sections="sections"></menu-items>
+      <country-sections :sections="sections"></country-sections>
     </section>
     <div class="page-container">
       <div class="body-container">
+        <city-sections :sections="sections"></city-sections>
         <section>
           <top-stories :articles="articles"></top-stories>
         </section>
@@ -48,12 +49,13 @@
 
 import NewsList from './components/NewsList.vue';
 import TopStories from './components/TopStories.vue';
-import MenuItems from './components/MenuItems.vue';
+import CountrySections from './components/CountrySections.vue';
+import CitySections from './components/CitySections.vue';
 import logoBlack from './assets/logo-black.png';
 import {eventBus} from './main.js'
 
 const axios = require('axios').default;
-const QUERIES = "SCOTLAND, Aberdeen, Dumfries, Dundee, Edinburgh, Falkirk, Glasgow, Inverness, Perth, Stirling, ENGLAND, Bristol, Cambridge, Carlisle, Chester, Leeds, Leicester, Liverpool, London, Manchester, Newcastle, Norwich, Nottingham, Oxford, Portsmouth, Sheffield, Southampton, York, NORTHERN-IRELAND, Belfast, Derry, WALES, Bangor, Cardiff, Newport, Swansea";
+const QUERIES = "SCOTLAND, Aberdeen, Edinburgh, Glasgow, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, Belfast, WALES, Cardiff, Swansea";
 
 
 
@@ -91,7 +93,8 @@ export default {
   components: {
     'news-list': NewsList,
     'top-stories': TopStories,
-    'menu-items': MenuItems,
+    'country-sections': CountrySections,
+    'city-sections': CitySections,
   }
 }
 </script>

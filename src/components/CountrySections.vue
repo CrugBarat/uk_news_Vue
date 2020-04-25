@@ -14,7 +14,7 @@
 import {eventBus} from '../main.js'
 
 export default {
-  name: 'menu-items',
+  name: 'country-sections',
   props: ['sections'],
   computed: {
     countrySections() {
@@ -58,6 +58,7 @@ export default {
   margin-right: 20px;
   margin-top: 15px;
   flex:1;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sections:hover {
