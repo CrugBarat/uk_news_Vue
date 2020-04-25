@@ -1,10 +1,12 @@
 <template lang="html">
+  <div class="overall-container">
   <div class="sections-container">
       <div  v-for="section in countrySections">
         <div class="sections">
-          <a v-on:click="handleClick">{{section}}</a>
+          <a v-on:click="handleClick(section)">{{section}}</a>
         </div>
       </div>
+  </div>
   </div>
 </template>
 
@@ -23,8 +25,8 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      eventBus.$emit('selected-section', this.section)
+    handleClick(section) {
+      eventBus.$emit('selected-section', section)
     }
   },
 }
@@ -32,24 +34,31 @@ export default {
 
 <style lang="css" scoped>
 
-.sections-container {
+.overall-container {
   width: 100vw;
   padding: 0;
   margin: 0;
   overflow: auto;
-  padding-left: 80px;
+}
+
+.sections-container {
+  width: 98%;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  padding-left: 5.5vw;
+  display: flex
 }
 
 .sections {
-  border-style: solid;
   border-color: transparent;
   float: left;
-  clear: none;
   color: #edf2f4;
   padding: 0;
   margin: 0;
   margin-right: 20px;
-  margin-top: 5px;
+  margin-top: 15px;
+  flex:1;
 }
 
 .sections:hover {

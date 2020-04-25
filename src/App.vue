@@ -12,6 +12,7 @@
             </div>
           </div>
           <div class="form-container">
+            <div class="form">
             <form>
               <select v-model="section">
                 <option v-for="section in sections" :value="section">{{section}}</option>
@@ -19,6 +20,7 @@
               <a v-on:click="getArticles(section)">Retrieve</a>
             </form>
           </div>
+        </div>
         </section>
       </div>
     </div>
@@ -107,11 +109,12 @@ export default {
 
 .menu-container {
   height: 40px;
+  overflow: auto;
 }
 
 .logo-title-container {
   float: left;
-  width: 10%;
+  width: 50%;
 }
 
 .logo-container {
@@ -134,14 +137,23 @@ export default {
 }
 
 .form-container {
-  width: 20%;
+  width: 45%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  border-style: solid;
+  overflow: auto;
+}
+
+.form {
   float: right;
   padding: 0;
   margin: 0;
+  border-style: solid
 }
 
 .heading-container {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background-color: #034078;
 }
@@ -156,11 +168,9 @@ h1 {
   font-size: 50px;
   width: 250px;
   margin-top: 0px;
-  margin-left: 65px;
+  margin-left: 4vw;
   color: #edf2f4;
   text-align: center;
-  border-style: solid;
-  border-color: transparent;
 }
 
 
