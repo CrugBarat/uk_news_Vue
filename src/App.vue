@@ -141,15 +141,13 @@ export default {
   float: left;
   padding: 0;
   margin: 0;
-  border-style: solid;
   overflow: auto;
 }
 
 .form {
   float: right;
   padding: 0;
-  margin: 0;
-  border-style: solid
+  margin: 5px;
 }
 
 .heading-container {

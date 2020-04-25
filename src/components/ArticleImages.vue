@@ -17,10 +17,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 img {
   width: 410px;
   height: 300px;
   padding: 0;
   margin: 0;
 }
+
 </style>

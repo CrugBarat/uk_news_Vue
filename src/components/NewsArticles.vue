@@ -1,7 +1,9 @@
 <template lang="html">
   <div class="article">
     <a :href="article.url" target="_blank">
-      <article-images class="article-image" :imageUrl="article.urlToImage"></article-images>
+      <div class="image-container">
+      <article-images class="image" :imageUrl="article.urlToImage"></article-images>
+      </div>
       <p class="title">{{article.title}}</p>
       <p>{{article.description}}</p>
     </a>
@@ -26,9 +28,13 @@ export default {
   border-style: solid;
   color: black;
   flex: 1, 0, auto;
-  width: 19%;
+  width: 240px;
   text-align: left;
-  margin: 4px;
+  margin-right: 13px;
+  margin-left: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
 }
 
 a {
@@ -36,8 +42,14 @@ a {
   color: inherit;
 }
 
-.article-image {
-  width: 270px;
+.image-container {
+  width: 250px;
+  overflow: auto;
+  border-style: solid;
+}
+
+.image {
+  width: 250px;
   height: 200px;
 }
 
