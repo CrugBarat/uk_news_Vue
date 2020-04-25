@@ -42,6 +42,7 @@ export default {
 .overall-container {
   display: block;
   text-align: center;
+  padding-top: 20px;
 }
 
 .grid-container {

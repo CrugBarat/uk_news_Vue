@@ -19,7 +19,7 @@ export default {
 <style lang="css" scoped>
 
 img {
-  width: 410px;
+  width: 390px;
   height: 300px;
   padding: 0;
   margin: 0;

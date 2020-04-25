@@ -41,7 +41,7 @@ a {
 }
 
 .image-container {
-  width: 390x;
+  width: 390px;
   overflow: auto;
 }
 

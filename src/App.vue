@@ -13,14 +13,14 @@
           </div>
           <div class="form-container">
             <div class="form">
-            <form>
-              <select v-model="section">
-                <option v-for="section in sections" :value="section">{{section}}</option>
-              </select>
-              <a v-on:click="getArticles(section)">Retrieve</a>
-            </form>
+              <form>
+                <select v-model="section">
+                  <option v-for="section in sections" :value="section">{{section}}</option>
+                </select>
+                <a v-on:click="getArticles(section)">Retrieve</a>
+              </form>
+            </div>
           </div>
-        </div>
         </section>
       </div>
     </div>
@@ -30,15 +30,30 @@
     </section>
     <div class="page-container">
       <div class="body-container">
-        <city-sections :sections="sections"></city-sections>
+        <section>
+          <city-sections :sections="sections"></city-sections>
+        </section>
         <section>
           <top-stories :articles="articles"></top-stories>
+          <hr>
         </section>
         <section>
+          <hero-article :articles="articles"></hero-article>
+          <hr>
         </section>
-        <div>
-          <news-list :articles="articles"></news-list>
-        </div>
+        <section>
+          <top-stories :articles="articles"></top-stories>
+          <hr>
+        </section>
+        <section>
+          <hero-article :articles="articles"></hero-article>
+          <hr>
+        </section>
+        <section>
+          <div>
+            <news-list :articles="articles"></news-list>
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -51,6 +66,7 @@ import NewsList from './components/NewsList.vue';
 import TopStories from './components/TopStories.vue';
 import CountrySections from './components/CountrySections.vue';
 import CitySections from './components/CitySections.vue';
+import HeroArticle from './components/HeroArticle.vue';
 import logoBlack from './assets/logo-black.png';
 import {eventBus} from './main.js'
 
@@ -95,6 +111,7 @@ export default {
     'top-stories': TopStories,
     'country-sections': CountrySections,
     'city-sections': CitySections,
+    'hero-article': HeroArticle,
   }
 }
 </script>
@@ -174,6 +191,10 @@ h1 {
   text-align: center;
 }
 
+</style>
 
-
+<style>
+  body {
+    overflow-x: hidden;
+  }
 </style>
