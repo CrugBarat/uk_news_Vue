@@ -5,6 +5,7 @@
         <article-images :imageUrl="article.urlToImage"></article-images>
       </div>
       <p class="title">{{article.title}}</p>
+      <p class="date">{{article.publishedAt}}</p>
     </a>
   </div>
 </template>
@@ -30,14 +31,12 @@ export default {
 
 .article {
   color: black;
-  flex: 1, 0, auto;
   width: 391px;
   text-align: left;
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  overflow: auto;
 }
 
 a {
@@ -47,7 +46,6 @@ a {
 
 .image-container {
   width: 390px;
-  overflow: auto;
 }
 
 .title {

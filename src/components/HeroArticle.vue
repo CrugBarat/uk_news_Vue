@@ -17,6 +17,7 @@
           <div class="content-container">
             <p class="content">{{article.content}}</p>
           </div>
+          <p class="date">{{article.publishedAt}}</p>
         </div>
       </div>
     </div>
@@ -66,8 +67,7 @@ export default {
 
 .image-container {
   width: 600px;
-  overflow: auto;
-  border-style: solid;
+  height: 500px;
   float: left;
 }
 
@@ -97,7 +97,6 @@ export default {
 
 .description-container {
   margin-top: 10px;
-  display: inline-block;
   padding: 0;
   margin: 0;
 }

@@ -6,6 +6,7 @@
       </div>
       <p class="title">{{article.title}}</p>
       <p class="description">{{article.description}}</p>
+      <p class="date">{{article.publishedAt}}</p>
     </a>
   </div>
 </template>
