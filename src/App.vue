@@ -85,6 +85,10 @@
         </section>
       </div>
     </div>
+    <section class="heading-container">
+      <h1 class="heading">COVID UPDATE</h1>
+    </section>
+      <covid-chart :covidData="covidData"></covid-chart>
     <section>
       <div class="footer"></div>
     </section>
@@ -102,6 +106,8 @@ import SportSections from './components/SportSections.vue';
 import HeroArticle from './components/HeroArticle.vue';
 import logoBlack from './assets/logo-black.png';
 import searchIcon from './assets/search.png';
+import CovidChart from "@/components/CovidChart.vue";
+import {map, sumBy, flatten, groupBy} from "lodash";
 import {eventBus} from './main.js'
 
 const axios = require('axios').default;
@@ -121,6 +127,7 @@ export default {
       logoBlack: logoBlack,
       searchIcon: searchIcon,
       searchNews: "",
+      covidData: null
     }
   },
   methods: {
@@ -145,6 +152,26 @@ export default {
     },
     handleSearch(){
       this.getArticles(this.searchNews)
+    },
+    buildCVUrl(country) {
+      const CVBaseUrl = "https://api.covid19api.com/country/";
+      const from = "2020-03-17T00:00:00Z"
+      const to = "2020-04-24T00:00:00Z"
+      return CVBaseUrl + country + "/status/confirmed?from=" + from + "&to=" + to
+    },
+    getCVData(country) {
+      let url = this.buildCVUrl(country);
+      axios.get(url).then((response) => {
+        const covidData = response.data;
+        const flattenedCovidData = flatten(covidData);
+        const groupedCovidData = groupBy(flattenedCovidData, 'Date');
+
+        const sortedCovidData = map(groupedCovidData, (array, date) => {
+          const getCases = sumBy(array, 'Cases');
+          return {'Date': date, 'Confrimed Cases': getCases}
+        })
+        this.covidData = sortedCovidData;
+      });
     }
   },
   mounted() {
@@ -159,6 +186,8 @@ export default {
       this.getSportsArticles(section);
     });
 
+    this.getCVData('united-kingdom')
+
   },
   components: {
     'news-list': NewsList,
@@ -167,6 +196,7 @@ export default {
     'city-sections': CitySections,
     'sports-sections': SportSections,
     'hero-article': HeroArticle,
+    'covid-chart': CovidChart,
   }
 }
 </script>
