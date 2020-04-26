@@ -60,7 +60,7 @@
     </div>
     <section class="heading-container">
       <h1 class="heading">SPORTS</h1>
-      <!-- <country-sections :sections="sections"></country-sections> -->
+      <sports-sections :sections="sportsSections"></sports-sections>
     </section>
     <div class="page-container">
       <div class="body-container">
@@ -96,6 +96,7 @@ import NewsList from './components/NewsList.vue';
 import TopStories from './components/TopStories.vue';
 import CountrySections from './components/CountrySections.vue';
 import CitySections from './components/CitySections.vue';
+import SportSections from './components/SportSections.vue';
 import HeroArticle from './components/HeroArticle.vue';
 import logoBlack from './assets/logo-black.png';
 import searchIcon from './assets/search.png';
@@ -103,6 +104,7 @@ import {eventBus} from './main.js'
 
 const axios = require('axios').default;
 const SECTIONS = "SCOTLAND, Aberdeen, Edinburgh, Glasgow, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, Belfast, WALES, Cardiff, Swansea";
+const SPORTSSECTIONS = "FOOTBALL, RUGBY, CRICKET";
 
 
 
@@ -114,6 +116,8 @@ export default {
       sportsArticles: [],
       sections: SECTIONS.split(', '),
       section: 'scotland',
+      sportsSections: SPORTSSECTIONS.split(', '),
+      sportSection: 'sports',
       logoBlack: logoBlack,
       searchIcon: searchIcon,
       searchNews: "",
@@ -122,7 +126,7 @@ export default {
   methods: {
     buildUrl(section) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
-      const domains = "bbc.co.uk"
+      const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk"
       const ApiKey = "3159bd64ef004f7584490af8761d30b0";
       return NewsAPIBaseUrl + section + "&domains=" + domains + "&pageSize=100&apiKey=" + ApiKey
     },
@@ -132,8 +136,14 @@ export default {
         this.articles = response.data.articles;
       });
     },
+    buildSportsUrl(section) {
+      const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
+      const domains = "bbc.co.uk, skysport.com"
+      const ApiKey = "3159bd64ef004f7584490af8761d30b0";
+      return NewsAPIBaseUrl + section + "&domains=" + domains + "&pageSize=100&apiKey=" + ApiKey
+    },
     getSportsArticles(section) {
-      let url = this.buildUrl(section);
+      let url = this.buildSportsUrl(section);
       axios.get(url).then((response) => {
         this.sportsArticles = response.data.articles;
       });
@@ -150,12 +160,17 @@ export default {
       this.getArticles(section);
     });
 
+    eventBus.$on('selected-sports-section', (section) => {
+      this.getSportsArticles(section);
+    });
+
   },
   components: {
     'news-list': NewsList,
     'top-stories': TopStories,
     'country-sections': CountrySections,
     'city-sections': CitySections,
+    'sports-sections': SportSections,
     'hero-article': HeroArticle,
   }
 }

@@ -31,7 +31,7 @@ export default {
       return chunkedArray[index];
     },
     randomIndex() {
-      return Math.floor(Math.random() * 33)
+      return Math.floor(Math.random() * 30)
     }
   }
 }
