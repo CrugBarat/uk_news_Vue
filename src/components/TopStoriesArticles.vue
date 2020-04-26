@@ -35,8 +35,7 @@ export default {
   color: black;
   width: 391px;
   text-align: left;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 2%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -57,4 +56,47 @@ a {
   font-size: 20px;
   font-weight: 900;
 }
+
+@media screen and (max-width: 1500px) {
+  .article {
+    margin-right: 1%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .article {
+    width: 350px;
+  }
+
+  .image-container {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .article {
+    width: 300px;
+  }
+
+  .image-container {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .article {
+    width: 250px;
+  }
+
+  .image-container {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .article {
+    width: 95%;
+  }
+}
+
 </style>

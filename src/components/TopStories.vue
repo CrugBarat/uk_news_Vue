@@ -1,13 +1,11 @@
 <template lang="html">
   <div>
     <section>
-      <div class="overall-container">
         <div class="grid-container">
           <div class="grid">
             <top-stories-articles v-for="article in topArticles(randomIndex())" :article="article"></top-stories-articles>
           </div>
         </div>
-      </div>
     </section>
   </div>
 </template>
@@ -39,17 +37,11 @@ export default {
 
 <style lang="css" scoped>
 
-.overall-container {
-  display: block;
-  text-align: center;
-  padding-top: 20px;
-}
-
 .grid-container {
-  width: 80%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 11%;
 }
 
 .grid {
@@ -58,5 +50,12 @@ export default {
   flex-wrap: wrap;
   text-align: center;
 }
+
+@media screen and (max-width: 1500px) {
+  .grid-container {
+    margin-left: 0%;
+  }
+}
+
 
 </style>

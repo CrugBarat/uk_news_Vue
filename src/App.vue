@@ -105,10 +105,8 @@ import searchIcon from './assets/search.png';
 import {eventBus} from './main.js'
 
 const axios = require('axios').default;
-const SECTIONS = "SCOTLAND, Aberdeen, Edinburgh, Glasgow, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, Belfast, WALES, Cardiff, Swansea";
+const SECTIONS = "SCOTLAND, Glasgow, Edinburgh, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, WALES, Cardiff";
 const SPORTSSECTIONS = "FOOTBALL, RUGBY, CRICKET";
-
-
 
 export default {
   name: 'app',
@@ -129,8 +127,9 @@ export default {
     buildUrl(section) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
       const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk, news.google.com, news.yahoo.com"
-      const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + section + "&domains=" + domains + "&language=en&pageSize=100&apiKey=" + ApiKey
+      const date = "2020-04-12"
+      const ApiKey = "b325bdb5ffa64154995253c137e4d682";
+      return NewsAPIBaseUrl + section + "&domains=" + domains + "&from=" + date + "&language=en&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {
       let url = this.buildUrl(section);
@@ -149,8 +148,8 @@ export default {
     }
   },
   mounted() {
-    // this.getArticles('scotland');
-    // this.getSportsArticles('sports');
+    this.getArticles('scotland');
+    this.getSportsArticles('sports');
 
     eventBus.$on('selected-section', (section) => {
       this.getArticles(section);
@@ -207,7 +206,6 @@ export default {
 
 .search-container {
   width: 45%;
-  padding: 0;
   overflow: auto;
 }
 
@@ -222,8 +220,10 @@ export default {
 
 .search-box {
   width: 200px;
+  height: 15px;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
+
 }
 
 input, .search-image:focus {
@@ -236,7 +236,6 @@ input {
 
 .heading-container {
   width: 100vw;
-  /* height: 110px; */
   background-color: #034078;
 }
 
@@ -256,7 +255,7 @@ h1 {
 
 .footer {
   width: 100vw;
-  height: 100px;
+  height: 50px;
   background-color: #034078;
 }
 
@@ -268,10 +267,6 @@ h1 {
   .search-container {
     width: 70%;
   }
-
-  /* .search-box {
-    width: 150px;
-  } */
 }
 
 @media screen and (max-width: 490px) {
