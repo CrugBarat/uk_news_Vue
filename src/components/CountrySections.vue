@@ -36,32 +36,32 @@ export default {
 
 .overall-container {
   width: 100vw;
-  padding: 0;
-  margin: 0;
-  overflow: auto;
 }
 
 .sections-container {
   width: 98%;
-  padding: 0;
-  margin: 0;
-  overflow: auto;
   padding-left: 5.6vw;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .sections {
   float: left;
   color: #edf2f4;
-  padding: 0;
-  margin: 0;
   margin-right: 20px;
   margin-top: 20px;
-  flex:1;
+  margin-bottom: 5px;
   font-family: 'Roboto', sans-serif;
 }
 
 .sections:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 490px) {
+  .sections {
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
 }
 </style>

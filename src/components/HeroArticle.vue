@@ -72,7 +72,6 @@ export default {
   height: 100%;
   float: left;
   margin-right: 5vw;
-  border-style: solid;
 }
 
 .image {

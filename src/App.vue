@@ -2,12 +2,12 @@
   <div>
     <div class="page-container">
       <div class="main-container">
-        <section class="menu-container">
+        <section>
           <div class="logo-title-container">
             <div class="logo-container">
               <img class="logo" :src="this.logoBlack">
             </div>
-            <div class="title-container">
+            <div>
               <h1 class="menu-title">UKN</h1>
             </div>
           </div>
@@ -128,9 +128,9 @@ export default {
   methods: {
     buildUrl(section) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
-      const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk"
+      const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk, news.google.com, news.yahoo.com"
       const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + section + "&domains=" + domains + "&pageSize=100&apiKey=" + ApiKey
+      return NewsAPIBaseUrl + section + "&domains=" + domains + "&language=en&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {
       let url = this.buildUrl(section);
@@ -149,8 +149,8 @@ export default {
     }
   },
   mounted() {
-    this.getArticles('scotland');
-    this.getSportsArticles('sports');
+    // this.getArticles('scotland');
+    // this.getSportsArticles('sports');
 
     eventBus.$on('selected-section', (section) => {
       this.getArticles(section);
@@ -183,11 +183,6 @@ export default {
   padding-right: 5vw;
 }
 
-.menu-container {
-  height: 45px;
-  overflow: auto;
-}
-
 .logo-title-container {
   float: left;
   width: 50%;
@@ -195,34 +190,29 @@ export default {
 
 .logo-container {
   float: left;
-  padding: 0;
-  margin: 0;
 }
 
 .logo {
-  height: 35px;
+  height: 25px;
   padding-left: 5px;
   margin: 2px;
 }
 
 .menu-title {
   font-family: 'Exo 2', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #202020;
   text-align: left;
 }
 
 .search-container {
   width: 45%;
-  float: left;
   padding: 0;
-  margin: 0;
   overflow: auto;
 }
 
 .search {
   float: right;
-  padding: 0;
   margin: 5px;
 }
 
@@ -246,7 +236,7 @@ input {
 
 .heading-container {
   width: 100vw;
-  height: 110px;
+  /* height: 110px; */
   background-color: #034078;
 }
 
@@ -258,7 +248,6 @@ h1 {
 .heading {
   font-family: 'Exo 2', sans-serif;
   font-size: 50px;
-  margin-top: 0px;
   margin-left: 5.4vw;
   padding-top: 5px;
   color: #edf2f4;
@@ -269,6 +258,36 @@ h1 {
   width: 100vw;
   height: 100px;
   background-color: #034078;
+}
+
+@media screen and (max-width: 620px) {
+  .logo-title-container {
+    width: 30%;
+  }
+
+  .search-container {
+    width: 70%;
+  }
+
+  /* .search-box {
+    width: 150px;
+  } */
+}
+
+@media screen and (max-width: 490px) {
+  .logo-title-container {
+    float: none;
+    width: 100%;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search {
+    float: none;
+  }
+
 }
 
 </style>

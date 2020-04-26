@@ -35,28 +35,22 @@ export default {
 <style lang="css" scoped>
 .overall-container {
   width: 100vw;
-  padding: 0;
-  margin: 0;
-  overflow: auto;
 }
 
 .sections-container {
   width: 98%;
   padding: 0;
   margin: 0;
-  overflow: auto;
   padding-left: .6vw;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .sections {
   float: left;
   color: #202020;
-  padding: 0;
-  margin: 0;
   margin-right: 20px;
   margin-top: 5px;
-  flex:1;
   font-family: 'Roboto', sans-serif;
 }
 
