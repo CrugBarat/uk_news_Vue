@@ -4,7 +4,7 @@
       <div class="image-container">
         <article-images :imageUrl="article.urlToImage"></article-images>
       </div>
-      <p class="title">{{article.title}}</p>
+      <p @mouseover="articleDescription" @mouseleave="articleTitle" class="title">{{this.title}}</p>
     </a>
   </div>
 </template>
@@ -15,8 +15,21 @@ import ArticleImages from './ArticleImages.vue';
 export default {
   name: 'top-stories-articles',
   props: ['article'],
+  data () {
+    return {
+      title: this.article.title
+    }
+  },
   components: {
     'article-images': ArticleImages
+  },
+  methods: {
+    articleDescription() {
+      this.title = this.article.description
+    },
+    articleTitle() {
+      this.title = this.article.title
+    }
   }
 }
 </script>
