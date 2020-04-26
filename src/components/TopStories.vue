@@ -46,7 +46,7 @@ export default {
 }
 
 .grid-container {
-  width: 100%;
+  width: 80%;
   padding: 0;
   margin: 0;
   display: inline-block;

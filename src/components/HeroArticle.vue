@@ -52,23 +52,23 @@ export default {
 
 .overall-container {
   display: block;
-  overflow: auto;
+  text-align: center;
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
 .article-container {
-  width: 100%;
+  width: 80%;
+  display: inline-block;
   padding: 0;
   margin: 0;
-  overflow: auto;
-  margin-left: 3vw;
 }
 
 .image-container {
-  width: 600px;
-  height: 500px;
+  width: 45%;
+  height: 100%;
   float: left;
+  margin-right: 5vw;
 }
 
 .image {
@@ -77,9 +77,8 @@ export default {
 }
 
 .text-container {
-  width: 600px;
+  width: 45%;
   float: left;
-  margin-left: 3vw;
 }
 
 .title-container {
@@ -91,7 +90,6 @@ export default {
   font-family: 'Coda Caption', sans-serif;
   font-size: 50px;
   font-weight: 900;
-  margin-right: 25px;
   text-align: center;
 }
 
@@ -105,7 +103,6 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 25px;
-  margin-right: 25px;
   text-align: justify;
 }
 
@@ -117,7 +114,6 @@ export default {
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
-  margin-right: 25px;
   text-align: justify;
 }
 

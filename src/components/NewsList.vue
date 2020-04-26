@@ -24,14 +24,14 @@ export default {
   methods: {
     randomArticles(index) {
       let articles = this.articles;
-      let i, j, chunkedArray = [], chunk = 8;
+      let i, j, chunkedArray = [], chunk = 10;
       for (i=0, j=0; i < articles.length; i += chunk, j++) {
         chunkedArray[j] = articles.slice(i,i+chunk);
       }
       return chunkedArray[index];
     },
     randomIndex() {
-      return Math.floor(Math.random() * 13)
+      return Math.floor(Math.random() * 10)
     }
   }
 }
@@ -42,10 +42,11 @@ export default {
 .overall-container {
   display: block;
   text-align: center;
+  margin-top: 20px;
 }
 
 .grid-container {
-  width: 85%;
+  width: 82%;
   padding: 0;
   margin: 0;
   display: inline-block;

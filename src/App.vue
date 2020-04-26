@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div class="page-container">
-      <div class="body-container">
+      <div class="main-container">
         <section class="menu-container">
           <div class="logo-title-container">
             <div class="logo-container">
@@ -27,7 +27,7 @@
       <country-sections :sections="sections"></country-sections>
     </section>
     <div class="page-container">
-      <div class="body-container">
+      <div class="main-container">
         <section>
           <city-sections :sections="sections"></city-sections>
         </section>
@@ -50,6 +50,7 @@
         <section>
           <div>
             <news-list :articles="articles"></news-list>
+            <hr>
           </div>
         </section>
         <section>
@@ -63,7 +64,7 @@
       <sports-sections :sections="sportsSections"></sports-sections>
     </section>
     <div class="page-container">
-      <div class="body-container">
+      <div class="main-container">
         <section>
           <top-stories :articles="sportsArticles"></top-stories>
           <hr>
@@ -75,6 +76,7 @@
         <section>
           <div>
             <news-list :articles="sportsArticles"></news-list>
+            <hr>
           </div>
         </section>
         <section>
@@ -136,14 +138,8 @@ export default {
         this.articles = response.data.articles;
       });
     },
-    buildSportsUrl(section) {
-      const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
-      const domains = "bbc.co.uk, skysport.com"
-      const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + section + "&domains=" + domains + "&pageSize=100&apiKey=" + ApiKey
-    },
     getSportsArticles(section) {
-      let url = this.buildSportsUrl(section);
+      let url = this.buildUrl(section);
       axios.get(url).then((response) => {
         this.sportsArticles = response.data.articles;
       });
@@ -182,7 +178,7 @@ export default {
   width: 100vw;
 }
 
-.body-container {
+.main-container {
   padding-left: 5vw;
   padding-right: 5vw;
 }
@@ -249,7 +245,7 @@ input {
 }
 
 .heading-container {
-  width: 100%;
+  width: 100vw;
   height: 110px;
   background-color: #034078;
 }
@@ -270,7 +266,7 @@ h1 {
 }
 
 .footer {
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background-color: #034078;
 }
@@ -279,8 +275,9 @@ h1 {
 
 <style>
 body {
-  overflow-x: hidden;
   user-select: none;
   background-color: #edf2f4;
+  overflow-x: hidden;
+  width: 100vw;
 }
 </style>
