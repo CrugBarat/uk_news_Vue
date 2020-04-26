@@ -65,20 +65,20 @@
     <div class="page-container">
       <div class="body-container">
         <section>
-          <top-stories :articles="articles"></top-stories>
+          <top-stories :articles="sportsArticles"></top-stories>
           <hr>
         </section>
         <section>
-          <hero-article :articles="articles"></hero-article>
+          <hero-article :articles="sportsArticles"></hero-article>
           <hr>
         </section>
         <section>
           <div>
-            <news-list :articles="articles"></news-list>
+            <news-list :articles="sportsArticles"></news-list>
           </div>
         </section>
         <section>
-          <top-stories :articles="articles"></top-stories>
+          <top-stories :articles="sportsArticles"></top-stories>
           <hr>
         </section>
       </div>
@@ -102,7 +102,7 @@ import searchIcon from './assets/search.png';
 import {eventBus} from './main.js'
 
 const axios = require('axios').default;
-const QUERIES = "SCOTLAND, Aberdeen, Edinburgh, Glasgow, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, Belfast, WALES, Cardiff, Swansea";
+const SECTIONS = "SCOTLAND, Aberdeen, Edinburgh, Glasgow, ENGLAND, Liverpool, London, Manchester, Newcastle, NORTHERN-IRELAND, Belfast, WALES, Cardiff, Swansea";
 
 
 
@@ -111,7 +111,8 @@ export default {
   data() {
     return {
       articles: [],
-      sections: QUERIES.split(', '),
+      sportsArticles: [],
+      sections: SECTIONS.split(', '),
       section: 'scotland',
       logoBlack: logoBlack,
       searchIcon: searchIcon,
@@ -119,15 +120,22 @@ export default {
     }
   },
   methods: {
-    buildUrl (url) {
+    buildUrl(section) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
+      const domains = "bbc.co.uk"
       const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + url + "&pageSize=100&apiKey=" + ApiKey
+      return NewsAPIBaseUrl + section + "&domains=" + domains + "&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {
       let url = this.buildUrl(section);
       axios.get(url).then((response) => {
         this.articles = response.data.articles;
+      });
+    },
+    getSportsArticles(section) {
+      let url = this.buildUrl(section);
+      axios.get(url).then((response) => {
+        this.sportsArticles = response.data.articles;
       });
     },
     handleSearch(){
@@ -136,6 +144,7 @@ export default {
   },
   mounted() {
     this.getArticles('scotland');
+    this.getSportsArticles('sports');
 
     eventBus.$on('selected-section', (section) => {
       this.getArticles(section);
