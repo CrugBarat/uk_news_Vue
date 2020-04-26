@@ -62,6 +62,27 @@
       <h1 class="heading">SPORTS</h1>
       <!-- <country-sections :sections="sections"></country-sections> -->
     </section>
+    <div class="page-container">
+      <div class="body-container">
+        <section>
+          <top-stories :articles="articles"></top-stories>
+          <hr>
+        </section>
+        <section>
+          <hero-article :articles="articles"></hero-article>
+          <hr>
+        </section>
+        <section>
+          <div>
+            <news-list :articles="articles"></news-list>
+          </div>
+        </section>
+        <section>
+          <top-stories :articles="articles"></top-stories>
+          <hr>
+        </section>
+      </div>
+    </div>
     <section>
       <div class="footer"></div>
     </section>
