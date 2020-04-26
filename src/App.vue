@@ -58,6 +58,10 @@
         </section>
       </div>
     </div>
+    <section class="heading-container">
+      <h1 class="heading">SPORTS</h1>
+      <!-- <country-sections :sections="sections"></country-sections> -->
+    </section>
     <section>
       <div class="footer"></div>
     </section>
