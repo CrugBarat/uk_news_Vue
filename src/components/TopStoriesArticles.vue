@@ -40,9 +40,6 @@ export default {
   margin-bottom: 10px;
 }
 
-.article:hover {
-}
-
 a {
   text-decoration: none;
   color: inherit;

@@ -421,4 +421,9 @@ body {
   overflow-x: hidden;
   width: 100vw;
 }
+
+a:hover {
+  text-decoration: underline;
+  color: #034078;
+}
 </style>
