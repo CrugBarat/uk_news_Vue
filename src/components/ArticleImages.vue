@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import noImage from '../assets/noImage.png';
+import noImage from '../assets/noImage.jpg';
 
 export default {
   name: 'article-images',
