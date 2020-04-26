@@ -1,5 +1,5 @@
 <template lang="html">
-  <p :value="handleDate">{{handleDate}}</p>
+  <p class="date">{{handleDate}}</p>
 </template>
 
 <script>
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.date {
+  font-weight: bold;
+}
 </style>

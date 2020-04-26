@@ -68,10 +68,11 @@ export default {
 }
 
 .image-container {
-  width: 45%;
+  width: 600px;
   height: 100%;
   float: left;
   margin-right: 5vw;
+  border-style: solid;
 }
 
 .image {
