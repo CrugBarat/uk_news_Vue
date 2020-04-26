@@ -8,9 +8,7 @@
           </a>
         </div>
         <div class="text-container">
-          <div class="title-container">
             <p class="title">{{article.title}}</p>
-          </div>
           <div class="description-container">
             <p class="description">{{article.description}}</p>
           </div>
@@ -61,10 +59,9 @@ export default {
 }
 
 .article-container {
-  width: 80%;
+  width: 90%;
   display: inline-block;
-  padding: 0;
-  margin: 0;
+  margin-left: 5%;
 }
 
 .image-container {
@@ -82,9 +79,6 @@ export default {
 .text-container {
   width: 45%;
   float: left;
-}
-
-.title-container {
 }
 
 .title {
@@ -109,19 +103,142 @@ export default {
   text-align: justify;
 }
 
-.content-container {
-  font-size: 20px;
-}
-
 .content {
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: justify;
   padding: 0;
   margin: 0;
-  text-align: justify;
 }
 
 .date {
   text-align: left;
+}
+
+@media screen and (max-width: 1600px) {
+  .article-container {
+    margin-left: 0%;
+    width: 95%;
+  }
+
+  .image-container {
+    margin-right: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 1375px) {
+  .article-container {
+    width: 100%;
+  }
+  .image-container {
+    width: 500px;
+    height: 100%;
+    margin-right: 1.25vw;
+  }
+
+  .image {
+    width: 500px;
+    height: 400px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .content {
+    font-size: 15px;
+  }
+
+  .date {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1065px) {
+  .image-container {
+    width: 400px;
+    height: 100%;
+    margin-right: 0.75vw;
+  }
+
+  .image {
+    width: 400px;
+    height: 300px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .content {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .image-container {
+    width: 600px;
+    height: 100%;
+  }
+
+  .image {
+    width: 600px;
+    height: 400px;
+  }
+
+  .text-container {
+    width: 600px;
+    float: left;
+  }
+
+  .title {
+    font-size: 45px;
+  }
+
+  .description {
+    font-size: 30px;
+  }
+
+  .content {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .image-container {
+    width: 95%;
+    height: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    width: 95%;
+    float: left;
+  }
+
+  .title {
+    font-size: 6vw;;
+  }
+
+  .description {
+    font-size: 4vw;
+  }
+
+  .content {
+    font-size: 4vw;
+  }
 }
 
 </style>
