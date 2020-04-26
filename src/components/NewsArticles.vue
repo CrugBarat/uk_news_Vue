@@ -30,13 +30,12 @@ export default {
 .article {
   color: black;
   flex: 1, 0, auto;
-  width: 240px;
+  width: 17%;
   text-align: left;
-  margin-right: 17px;
-  margin-left: 17px;
+  margin-right: 1%;
+  margin-left: 1%;
   margin-top: 10px;
   margin-bottom: 10px;
-  overflow: auto;
 }
 
 a {
@@ -45,13 +44,13 @@ a {
 }
 
 .image-container {
-  width: 250px;
+  width: 100%;
   overflow: auto;
 }
 
 .image {
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .title {
@@ -64,5 +63,29 @@ a {
 
 .description {
   font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 1550px) {
+  .article {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .article {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .article {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .article {
+    width: 95%;
+  }
 }
 </style>

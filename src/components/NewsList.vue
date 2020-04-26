@@ -24,7 +24,7 @@ export default {
   methods: {
     randomArticles(index) {
       let articles = this.articles;
-      let i, j, chunkedArray = [], chunk = 10;
+      let i, j, chunkedArray = [], chunk = 12;
       for (i=0, j=0; i < articles.length; i += chunk, j++) {
         chunkedArray[j] = articles.slice(i,i+chunk);
       }
@@ -47,8 +47,6 @@ export default {
 
 .grid-container {
   width: 82%;
-  padding: 0;
-  margin: 0;
   display: inline-block;
 }
 
@@ -58,5 +56,35 @@ export default {
   flex-wrap: wrap;
   text-align: center;
 }
+
+@media screen and (max-width: 1550px) {
+  .grid-container {
+  margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .grid-container {
+  margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .grid-container {
+  margin-left: 2.5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+  width: 95%;
+  margin-left: 0%;
+  }
+
+  .overall-container {
+    text-align: left;
+  }
+}
+
 
 </style>
