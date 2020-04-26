@@ -97,7 +97,7 @@ export default {
     buildUrl (url) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
       const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + url + "&apiKey=" + ApiKey
+      return NewsAPIBaseUrl + url + "&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {
       let url = this.buildUrl(section);
@@ -201,7 +201,7 @@ input {
 
 .heading-container {
   width: 100%;
-  height: 100px;
+  height: 110px;
   background-color: #034078;
 }
 
@@ -215,7 +215,7 @@ h1 {
   font-size: 50px;
   width: 250px;
   margin-top: 0px;
-  margin-left: 4vw;
+  margin-left: 4.5vw;
   color: #edf2f4;
   text-align: center;
 }
@@ -232,5 +232,6 @@ h1 {
 body {
   overflow-x: hidden;
   user-select: none;
+  background-color: #edf2f4;
 }
 </style>

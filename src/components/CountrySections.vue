@@ -56,7 +56,7 @@ export default {
   padding: 0;
   margin: 0;
   margin-right: 20px;
-  margin-top: 15px;
+  margin-top: 20px;
   flex:1;
   font-family: 'Roboto', sans-serif;
 }
