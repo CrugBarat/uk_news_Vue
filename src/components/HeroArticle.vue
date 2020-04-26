@@ -92,7 +92,7 @@ export default {
   font-size: 50px;
   font-weight: 900;
   margin-right: 25px;
-  text-align: justify;
+  text-align: center;
 }
 
 .description-container {
