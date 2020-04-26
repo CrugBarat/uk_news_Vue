@@ -55,5 +55,7 @@ export default {
 
 .sections:hover {
   cursor: pointer;
+  background-color: #edf2f4;
+  color: #034078;
 }
 </style>

@@ -16,10 +16,9 @@ export default {
   data(){
     return {
       chartOptions: {
-        width: 1200,
-        height: 400,
-        title: 'Confirmed COVID-19 Cases in UK since 17/03/2020',
+        height: 450,
         colors: ['#034078'],
+        backgroundColor: '#edf2f4',
       },
       chartType: "ColumnChart"
     }

@@ -49,12 +49,14 @@ export default {
 .sections {
   float: left;
   color: #202020;
-  margin-right: 20px;
+  margin-right: 1.5vw;
   margin-top: 5px;
   font-family: 'Roboto', sans-serif;
 }
 
 .sections:hover {
   cursor: pointer;
+  background-color: #034078;
+  color: #edf2f4;
 }
 </style>
