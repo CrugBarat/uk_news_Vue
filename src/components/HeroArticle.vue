@@ -17,7 +17,7 @@
           <div class="content-container">
             <p class="content">{{article.content}}</p>
           </div>
-          <p class="date">{{article.publishedAt}}</p>
+          <article-date class="date" :publishedAt="article.publishedAt"></article-date>
         </div>
       </div>
     </div>
@@ -26,11 +26,14 @@
 
 <script>
 import ArticleImages from './ArticleImages.vue';
+import ArticleDate from './ArticleDate.vue';
+
 export default {
   name: 'hero-article',
   props: ['articles'],
   components: {
-    'article-images': ArticleImages
+    'article-images': ArticleImages,
+    'article-date': ArticleDate,
   },
   methods: {
     heroArticles(index) {
@@ -115,6 +118,10 @@ export default {
   padding: 0;
   margin: 0;
   text-align: justify;
+}
+
+.date {
+  text-align: left;
 }
 
 </style>

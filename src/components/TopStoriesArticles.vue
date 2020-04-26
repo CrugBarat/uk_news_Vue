@@ -5,19 +5,21 @@
         <article-images :imageUrl="article.urlToImage"></article-images>
       </div>
       <p class="title">{{article.title}}</p>
-      <p class="date">{{article.publishedAt}}</p>
+      <article-date :publishedAt="article.publishedAt"></article-date>
     </a>
   </div>
 </template>
 
 <script>
 import ArticleImages from './ArticleImages.vue';
+import ArticleDate from './ArticleDate.vue';
 
 export default {
   name: 'top-stories-articles',
   props: ['article'],
   components: {
-    'article-images': ArticleImages
+    'article-images': ArticleImages,
+    'article-date': ArticleDate,
   },
   methods: {
     articleDescription() {
