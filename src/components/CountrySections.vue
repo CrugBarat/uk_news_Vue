@@ -46,7 +46,7 @@ export default {
   padding: 0;
   margin: 0;
   overflow: auto;
-  padding-left: 5.5vw;
+  padding-left: 5.6vw;
   display: flex;
 }
 

@@ -45,7 +45,7 @@ export default {
   padding: 0;
   margin: 0;
   overflow: auto;
-  padding-left: .5vw;
+  padding-left: .6vw;
   display: flex;
 }
 
@@ -55,7 +55,7 @@ export default {
   padding: 0;
   margin: 0;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   flex:1;
   font-family: 'Roboto', sans-serif;
 }

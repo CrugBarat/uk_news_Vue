@@ -188,7 +188,7 @@ export default {
 }
 
 .menu-container {
-  height: 40px;
+  height: 45px;
   overflow: auto;
 }
 
@@ -262,11 +262,11 @@ h1 {
 .heading {
   font-family: 'Exo 2', sans-serif;
   font-size: 50px;
-  width: 250px;
   margin-top: 0px;
-  margin-left: 4.5vw;
+  margin-left: 5.4vw;
+  padding-top: 5px;
   color: #edf2f4;
-  text-align: center;
+  text-align: left;
 }
 
 .footer {
