@@ -43,6 +43,11 @@ a {
   color: inherit;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: #034078;
+}
+
 .image-container {
   width: 100%;
   overflow: auto;

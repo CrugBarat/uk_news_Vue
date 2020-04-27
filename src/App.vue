@@ -110,7 +110,10 @@
         </section>
         <section>
           <div class="chart">
-            <covid-chart :covidData="covidData"></covid-chart>
+            <covid-chart :covidData="covidData" :country="country"></covid-chart>
+          </div>
+          <div class="country-query">
+            <p>{{country.toUpperCase()}} - {{queryType}}</p>
           </div>
         </section>
       </div>
@@ -207,7 +210,8 @@
         this.country = country;
       },
       handleQueryClick(query) {
-        this.getCVData(this.country, query)
+        this.getCVData(this.country, query);
+        this.queryType = query
       }
     },
     mounted() {
@@ -380,6 +384,15 @@
     color: #edf2f4;
   }
 
+  .country-query {
+    padding: 0;
+    margin: 0;
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+  }
+
 
   @media screen and (max-width: 620px) {
     .logo-title-container {
@@ -420,10 +433,5 @@ body {
   background-color: #edf2f4;
   overflow-x: hidden;
   width: 100vw;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #034078;
 }
 </style>

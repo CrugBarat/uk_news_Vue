@@ -54,7 +54,7 @@ export default {
   font-family: 'Roboto', sans-serif;
 }
 
-.sections:hover {
+.sections:hover, .sections:focus {
   cursor: pointer;
   background-color: #034078;
   color: #edf2f4;
