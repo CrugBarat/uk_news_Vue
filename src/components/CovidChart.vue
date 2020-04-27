@@ -19,6 +19,7 @@ export default {
         height: 450,
         colors: ['#034078'],
         backgroundColor: '#edf2f4',
+        legend: {position: 'none'},
       },
       chartType: "ColumnChart"
     }
