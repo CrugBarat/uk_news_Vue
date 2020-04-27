@@ -1,6 +1,6 @@
 # UK NEWS
 
-A basic UK NEWS search app, which uses an API as a data source:
+UK NEWS is a search app, which uses an API as a data source.
 
 **Programming Language**: JavaScript
 
