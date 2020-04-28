@@ -1,3 +1,5 @@
+<img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news1.png" width="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news2.png" width="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news3.png" width="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news4.png" width="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news5.png" width="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/uk_news/news6.png" width="300">
+
 # UK NEWS
 
 UK NEWS is a search app, which uses an API as a data source.
@@ -12,7 +14,7 @@ UK NEWS is a search app, which uses an API as a data source.
 
 **Data Visualisation Library**: Google Charts
 
-The UK NEWS app can dynamically search data requested from multiple APIs and return details stored for a corresponding result. It can filter through countries and cities in the UK and return a list of up-to-date news articles for the corresponding area. Each area uses a different request as a data source. The app can also return approx. 100 articles for any given keyword via a search bar. There is a sports section which handles a different set of requests and data. There is a COVID-19 Update section, which uses a different API. This section uses goggle charts for data visualisation.
+The UK NEWS app can dynamically search data requested from multiple APIs and return details stored for a corresponding result. It can filter through countries and cities in the UK and return a list of up-to-date news articles for the corresponding area. Each area uses a different request as a data source. The app can also return up to 100 articles for any given keyword via a search bar. There is a sports section which handles a different set of requests and data. There is a COVID-19 Update section, which uses a different API. This section uses goggle charts for data visualisation.
 
 This exercise was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. The exercise brief can be found below.
 
