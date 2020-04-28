@@ -126,14 +126,14 @@
 
 
 <script>
-import NewsList from './components/NewsList.vue';
-import TopStories from './components/TopStories.vue';
-import CountrySections from './components/CountrySections.vue';
-import CitySections from './components/CitySections.vue';
-import SportSections from './components/SportSections.vue';
-import HeroArticle from './components/HeroArticle.vue';
-import logoBlack from './assets/logo-black.png';
-import searchIcon from './assets/search.png';
+import NewsList from '@/components/NewsList.vue';
+import TopStories from '@/components/TopStories.vue';
+import CountrySections from '@/components/CountrySections.vue';
+import CitySections from '@/components/CitySections.vue';
+import SportSections from '@/components/SportSections.vue';
+import HeroArticle from '@/components/HeroArticle.vue';
+import logoBlack from '@/assets/logo-black.png';
+import searchIcon from '@/assets/search.png';
 import CovidChart from "@/components/CovidChart.vue";
 import {map, sumBy, flatten, groupBy} from "lodash";
 import {eventBus} from './main.js'
@@ -169,7 +169,7 @@ export default {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
       const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk, news.google.com, news.yahoo.com"
       const date = "2020-04-12"
-      const ApiKey = "b325bdb5ffa64154995253c137e4d682";
+      const ApiKey = "3159bd64ef004f7584490af8761d30b0";
       return NewsAPIBaseUrl + section + "&domains=" + domains + "&from=" + date + "&language=en&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {

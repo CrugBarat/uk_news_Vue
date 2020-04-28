@@ -24,14 +24,14 @@ export default {
   methods: {
     randomArticles(index) {
       let articles = this.articles;
-      let i, j, chunkedArray = [], chunk = 12;
+      let i, j, chunkedArray = [], chunk = 15;
       for (i=0, j=0; i < articles.length; i += chunk, j++) {
         chunkedArray[j] = articles.slice(i,i+chunk);
       }
       return chunkedArray[index];
     },
     randomIndex() {
-      return Math.floor(Math.random() * 10)
+      return Math.floor(Math.random() * 6)
     }
   }
 }
