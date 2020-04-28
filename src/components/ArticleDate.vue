@@ -3,15 +3,14 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   name: 'article-date',
   props: ['publishedAt'],
   computed: {
     formatDate () {
-      const date = new Date (this.publishedAt);
-      const dtf = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'long', day: '2-digit'})
-      const [{value: month },,{value: day},,{value: year}] = dtf.formatToParts(date)
-      return `${day} ${month} ${year}`
+      return moment(this.publishedAt).format('DD MMM YYYY')
     }
   }
 }

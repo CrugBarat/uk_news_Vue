@@ -135,6 +135,7 @@ import HeroArticle from '@/components/HeroArticle.vue';
 import logoBlack from '@/assets/logo-black.png';
 import searchIcon from '@/assets/search.png';
 import CovidChart from "@/components/CovidChart.vue";
+import moment from 'moment';
 import {map, sumBy, flatten, groupBy} from "lodash";
 import {eventBus} from './main.js'
 
@@ -199,10 +200,7 @@ export default {
         const flattenedCovidData = flatten(covidData);
         const groupedCovidData = groupBy(flattenedCovidData, 'Date');
         const sortedCovidData = map(groupedCovidData, (array, date) => {
-          const formatDate = new Date (date);
-          const dtf = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: '2-digit'})
-          const [{value: month },,{value: day},,{value: year}] = dtf.formatToParts(formatDate)
-          date = `${day}-${month}-${year}`
+          date = moment(date).format('DD-MMM');
           const getQuery = sumBy(array, queryType);
           return {'Date': date, 'Query': getQuery}
         })
