@@ -2,7 +2,7 @@
 
 # UK NEWS
 
-UK NEWS is a search app, which uses an API as a data source.
+UK NEWS is a search app, which uses a HTTP RESTful API as a data source.
 
 **Programming Language**: JavaScript
 
@@ -14,7 +14,7 @@ UK NEWS is a search app, which uses an API as a data source.
 
 **Data Visualisation Library**: Google Charts
 
-The UK NEWS app can dynamically search data requested from multiple APIs and return details stored for a corresponding result. It can filter through countries and cities in the UK and return a list of up-to-date news articles for the corresponding area. Each area uses a different request as a data source. The app can also return up to 100 articles for any given keyword via a search bar. There is a sports section which handles a different set of requests and data. There is a COVID-19 Update section, which uses a different API. This section uses goggle charts for data visualisation.
+The UK NEWS app can dynamically search data via multiple request to an API and return details stored for a corresponding result. It can filter through countries and cities in the UK and return a list of up-to-date news articles for the corresponding area. Each area uses a different request as a data source. The app can also return up to 100 articles for any given keyword via a search bar. There is a sports section which handles a different set of requests and data. There is a COVID-19 Update section, which uses a different API. This section uses goggle charts for data visualisation.
 
 This exercise was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. The exercise brief can be found below.
 
@@ -46,7 +46,7 @@ Your task is to create an application that makes a request to an API and display
 npm install
 ```
 
-- Compile for development
+- Compile
 
 ```
 npm run serve
