@@ -169,9 +169,8 @@ export default {
     buildUrl(section) {
       const NewsAPIBaseUrl = "https://newsapi.org/v2/everything?q=";
       const domains = "bbc.co.uk, dailymail.co.uk, dailyrecord.co.uk, metro.co.uk, thesun.co.uk, theguardian.com, express.co.uk, news.google.com, news.yahoo.com"
-      const date = "2020-04-12"
       const ApiKey = "3159bd64ef004f7584490af8761d30b0";
-      return NewsAPIBaseUrl + section + "&domains=" + domains + "&from=" + date + "&language=en&pageSize=100&apiKey=" + ApiKey
+      return NewsAPIBaseUrl + section + "&domains=" + domains + "&language=en&pageSize=100&apiKey=" + ApiKey
     },
     getArticles(section) {
       let url = this.buildUrl(section);
